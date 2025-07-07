@@ -1,0 +1,1295 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilibeth Nails - Belleza Profesional en tus Manos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        :root {
+            --primary: #ff6b8b;
+            --secondary: #ffccd5;
+            --dark: #2d2d2d;
+            --light: #f8f8f8;
+            --accent: #a663cc;
+            --gold: #d4af37;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-left: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 139, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 20px;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 80px;
+            flex: 1;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 100px 20px;
+            background-color: var(--secondary);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Team */
+        .team {
+            padding: 100px 20px;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .team-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .team-member {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,204,213,0.2));
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .member-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            border: 5px solid var(--secondary);
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-member:hover .member-img {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+
+        .team-member h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .team-member p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .team-member .bio {
+            color: #666;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--primary);
+            transition: var(--transition);
+            font-size: 1.3rem;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 20px;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-text p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-about p {
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h3,
+        .footer-hours h3,
+        .footer-newsletter h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links h3::after,
+        .footer-hours h3::after,
+        .footer-newsletter h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .footer-newsletter p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            opacity: 0.9;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Social Buttons */
+        .social-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .admin-panel.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .admin-container {
+            background-color: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .admin-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-admin:hover {
+            color: var(--primary);
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login-form h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .admin-section {
+            margin-bottom: 30px;
+        }
+
+        .admin-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            color: var(--accent);
+        }
+
+        .service-editor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .editor-item {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .editor-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .editor-item input,
+        .editor-item textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .editor-item textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .admin-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .admin-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .admin-btn.save {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .admin-btn.cancel {
+            background-color: #f0f0f0;
+            color: var(--dark);
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .team-member {
+                padding: 30px 20px;
+            }
+            
+            .member-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .admin-container {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .member-img {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .team-member h3 {
+                font-size: 1.6rem;
+            }
+
+            .social-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .social-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <h1>Lilibeth_Nails1</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#" class="btn" id="admin-link">Administración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Belleza en tus manos</h2>
+            <p>Descubre el arte de la manicura y pedicura en nuestro exclusivo estudio. Transformamos tus uñas en obras maestras con técnicas innovadoras y productos de primera calidad.</p>
+            <a href="#services" class="btn">Ver Servicios</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Descubre nuestra amplia gama de tratamientos para tus uñas</p>
+        </div>
+        <div class="services-container">
+            <div class="service-card" id="service1">
+                <div class="service-img">
+                    <img src="https://i.pinimg.com/736x/3a/ab/75/3aab75c61c280ef45ca814d88d181a01.jpg" alt="Manicura Clásica">
+                </div>
+                <div class="service-content">
+                    <h3>Uñas semi permanente</h3>
+                    <p>Cuidado completo de manos con exfoliación, hidratación y esmaltado profesional. Duración aproximada: 45 minutos.</p>
+                    <span class="price"></span>
+                    <a href="https://wa.me/56959285495?text=Hola%20Lilibeth%20Nails!%20Quisiera%20reservar%20una%20cita%20para%20el%20servicio%20de%20Uñas%20semi%20permanente" class="whatsapp-btn" target=" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="service-card" id="service2">
+                <div class="service-img">
+                    <img src="https://i.pinimg.com/736x/37/d9/61/37d96161e2163e547b668fd5e30e8be5.jpg" alt="Uñas Acrílicas">
+                </div>
+                <div class="service-content">
+                    <h3>Uñas Acrílicas</h3>
+                    <p>Extensión de uñas con acrílico para un look duradero y resistente. Incluye diseño básico.</p>
+                    <span class="price"></span>
+                    <a href="https://wa.me/56959285495?text=Hola%20Lilibeth%20Nails!%20Quisiera%20reservar%20una%20cita%20para%20el%20servicio%20de%20Uñas%20Acrílicas" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="service-card" id="service3">
+                <div class="service-img">
+                    <img src="https://i.pinimg.com/736x/48/25/c2/4825c279b4889b67bb50b8287137b691.jpg" alt="Gelish">
+                </div>
+                <div class="service-content">
+                    <h3>Uñas esculpida</h3>
+                    <p>Esmaltado semipermanente que dura hasta 3 semanas sin perder brillo. Gran variedad de colores.</p>
+                    <span class="price"></span>
+                    <a href="https://wa.me/56959285495?text=Hola%20Lilibeth%20Nails!%20Quisiera%20reservar%20una%20cita%20para%20el%20servicio%20de%20Uñas%20esculpida" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="service-card" id="service4">
+                <div class="service-img">
+                    <img src="https://i.pinimg.com/736x/c6/1d/72/c61d72b48fd8a6bc16144ae8b1fa7996.jpg" alt="Pedicura Spa">
+                </div>
+                <div class="service-content">
+                    <h3>Pedicura</h3>
+                    <p>Tratamiento de lujo para pies que incluye exfoliación, masaje y esmaltado. Relajación garantizada.</p>
+                    <span class="price"></span>
+                    <a href="https://wa.me/56959285495?text=Hola%20Lilibeth%20Nails!%20Quisiera%20reservar%20una%20cita%20para%20el%20servicio%20de%20Pedicura" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-title">
+            <h2>Nuestro Trabajo</h2>
+            <p>Inspírate con nuestras creaciones</p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/f0/6e/91/f06e911510f0d4670738e52852698b0c.jpg " alt="Diseño 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/80/97/a6/8097a6b24d23d0d150fdcb9c55a84cbd.jpg" alt="Diseño 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/ae/91/64/ae91643f082b6e8b7e769175539866d5.jpg" alt="Diseño 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/95/b3/64/95b364bb9b5cc962d211355051999873.jpg" alt="Diseño 4">
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section - Actualizada para mostrar solo a Lilibeth -->
+    <section class="team" id="team">
+        <div class="section-title">
+            <h2>Nuestro Equipo</h2>
+            <p>Conoce a nuestra especialista en belleza</p>
+        </div>
+        <div class="team-container">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="https://i.pinimg.com/736x/1b/65/d1/1b65d1b9718ec5e3f1ad0ec384de19cc.jpg" alt="Lilibeth">
+                </div>
+                <h3>Lilibeth Fuenmayor</h3>
+                <p>Especialista en Uñas y Diseños</p>
+                <div class="bio">
+                    Con más de 5 años de experiencia en el mundo de la belleza de uñas, Lilibeth combina técnica y creatividad para transformar tus manos en auténticas obras de arte. Especialista en uñas y pedicura, cada servicio es una experiencia única de cuidado y estilo.
+                </div>
+                <div class="social-icons">  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contáctanos</h2>
+            <p>Visítanos o contáctanos para reservar tu cita</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Dirección</h4>
+                        <p>Chile Iquique<br>Calle Thompson, 559</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Teléfono</h4>
+                        <p>+56 9 5928 5495</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Horario</h4>
+                        <p>Lunes a Sabado: 9:00am - 8:00pm<br> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-spa"></i> Lilibeth Nails
+                </div>
+                <p>Transformamos tus uñas en obras de arte con técnicas innovadoras y productos de la más alta calidad. Tu belleza es nuestra pasión.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h3>Horario</h3>
+                <div class="hours-item">
+                    <span>Lunes - Sabado:</span>
+                    <span>9:00am - 8:00pm</span>
+                </div>
+                <div class="hours-item">
+                    <span>Domingos:</span>
+                    <span>Cerrado</span>
+                </div>
+                </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Lilibeth_Nails1 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+        <a href="https://wa.me/34123456789" class="social-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/lilibethnails" class="social-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2>Panel de Administración</h2>
+                <button class="close-admin" id="closeAdmin">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="loginSection">
+                <form class="login-form" id="adminLoginForm">
+                    <h3>Acceso Administrativo</h3>
+                    <div class="form-group">
+                        <label for="adminPassword">Contraseña:</label>
+                        <input type="password" id="adminPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Acceder</button>
+                </form>
+            </div>
+            
+            <div id="adminContent" style="display: none;">
+                <div class="admin-section">
+                    <h3>Editar Servicios</h3>
+                    <div class="service-editor">
+                        <div class="editor-item">
+                            <label for="service1-title">Título Servicio 1:</label>
+                            <input type="text" id="service1-title" value="Uñas semi permanente">
+                            <label for="service1-desc">Descripción:</label>
+                            <textarea id="service1-desc">Cuidado completo de manos con exfoliación, hidratación y esmaltado profesional. Duración aproximada: 45 minutos.</textarea>
+                            <label for="service1-price">Precio:</label>
+                            <input type="text" id="service1-price" value="">
+                            <label for="service1-img">URL Imagen:</label>
+                            <input type="text" id="service1-img" value="https://images.unsplash.com/photo-1590239926044-4131f5d0658d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80">
+                        </div>
+                        <div class="editor-item">
+                            <label for="service2-title">Título Servicio 2:</label>
+                            <input type="text" id="service2-title" value="Uñas Acrílicas">
+                            <label for="service2-desc">Descripción:</label>
+                            <textarea id="service2-desc">Extensión de uñas con acrílico para un look duradero y resistente. Incluye diseño básico.</textarea>
+                            <label for="service2-price">Precio:</label>
+                            <input type="text" id="service2-price" value="">
+                            <label for="service2-img">URL Imagen:</label>
+                            <input type="text" id="service2-img" value="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80">
+                        </div>
+                        <div class="editor-item">
+                            <label for="service3-title">Título Servicio 3:</label>
+                            <input type="text" id="service3-title" value="Uñas esculpida">
+                            <label for="service3-desc">Descripción:</label>
+                            <textarea id="service3-desc">Esmaltado semipermanente que dura hasta 3 semanas sin perder brillo. Gran variedad de colores.</textarea>
+                            <label for="service3-price">Precio:</label>
+                            <input type="text" id="service3-price" value="">
+                            <label for="service3-img">URL Imagen:</label>
+                            <input type="text" id="service3-img" value="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=400&h=300&fit=crop">
+                        </div>
+                        <div class="editor-item">
+                            <label for="service4-title">Título Servicio 4:</label>
+                            <input type="text" id="service4-title" value="Pedicura">
+                            <label for="service4-desc">Descripción:</label>
+                            <textarea id="service4-desc">Tratamiento de lujo para pies que incluye exfoliación, masaje y esmaltado. Relajación garantizada.</textarea>
+                            <label for="service4-price">Precio:</label>
+                            <input type="text" id="service4-price" value="">
+                            <label for="service4-img">URL Imagen:</label>
+                            <input type="text" id="service4-img" value="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400&h=300&fit=crop">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-actions">
+                    <button class="admin-btn save" id="saveChanges">Guardar Cambios</button>
+                    <button class="admin-btn cancel" id="cancelChanges">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Admin Panel Logic
+        const adminPanel = document.getElementById('adminPanel');
+        const adminLink = document.getElementById('admin-link');
+        const closeAdmin = document.getElementById('closeAdmin');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const adminContent = document.getElementById('adminContent');
+        const loginSection = document.getElementById('loginSection');
+        const saveChangesBtn = document.getElementById('saveChanges');
+        const cancelChangesBtn = document.getElementById('cancelChanges');
+        
+        // Open admin panel
+        adminLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            adminPanel.classList.add('active');
+        });
+        
+        // Close admin panel
+        closeAdmin.addEventListener('click', () => {
+            adminPanel.classList.remove('active');
+        });
+        
+        // Admin login
+        adminLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            
+            if (password === '2025') {
+                loginSection.style.display = 'none';
+                adminContent.style.display = 'block';
+            } else {
+                alert('Contraseña incorrecta. Intente nuevamente.');
+            }
+        });
+        
+        // Save changes
+        saveChangesBtn.addEventListener('click', () => {
+            // Update service 1
+            document.querySelector('#service1 h3').textContent = document.getElementById('service1-title').value;
+            document.querySelector('#service1 p').textContent = document.getElementById('service1-desc').value;
+            document.querySelector('#service1 .price').textContent = document.getElementById('service1-price').value;
+            document.querySelector('#service1 .service-img img').src = document.getElementById('service1-img').value;
+            
+            // Update service 2
+            document.querySelector('#service2 h3').textContent = document.getElementById('service2-title').value;
+            document.querySelector('#service2 p').textContent = document.getElementById('service2-desc').value;
+            document.querySelector('#service2 .price').textContent = document.getElementById('service2-price').value;
+            document.querySelector('#service2 .service-img img').src = document.getElementById('service2-img').value;
+            
+            // Update service 3
+            document.querySelector('#service3 h3').textContent = document.getElementById('service3-title').value;
+            document.querySelector('#service3 p').textContent = document.getElementById('service3-desc').value;
+            document.querySelector('#service3 .price').textContent = document.getElementById('service3-price').value;
+            document.querySelector('#service3 .service-img img').src = document.getElementById('service3-img').value;
+            
+            // Update service 4
+            document.querySelector('#service4 h3').textContent = document.getElementById('service4-title').value;
+            document.querySelector('#service4 p').textContent = document.getElementById('service4-desc').value;
+            document.querySelector('#service4 .price').textContent = document.getElementById('service4-price').value;
+            document.querySelector('#service4 .service-img img').src = document.getElementById('service4-img').value;
+            
+            alert('Cambios guardados exitosamente!');
+        });
+        
+        // Cancel changes
+        cancelChangesBtn.addEventListener('click', () => {
+            adminPanel.classList.remove('active');
+            // Reset form to original values
+            setTimeout(() => {
+                loginSection.style.display = 'block';
+                adminContent.style.display = 'none';
+                document.getElementById('adminPassword').value = '';
+            }, 300);
+        });
+
+        // Close admin panel when clicking outside
+        adminPanel.addEventListener('click', (e) => {
+            if (e.target === adminPanel) {
+                adminPanel.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
